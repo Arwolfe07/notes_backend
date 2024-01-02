@@ -1,7 +1,8 @@
 const request = require('supertest');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const app = 'http://localhost:5000'
+const app = 'http://localhost:5000';
+const deployedApp = 'https://create-notes-backend.onrender.com'
 
 dotenv.config();
 

@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "a3c04279-2d94-46a5-9fd5-839c71619ade",
+		"name": "Notes",
+		"description": "This is the Notes backend api developed using Express and Node JS and mongoDB for database. It has authentication as well as CRUD operations for notes.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21424091",
+		"_collection_link": "https://lunar-crescent-380874.postman.co/workspace/bd52e6d1-b8ca-4e00-bace-05ac35adbbcf/collection/21424091-a3c04279-2d94-46a5-9fd5-839c71619ade?action=share&source=collection_link&creator=21424091"
+	},
+	"item": [
+		{
+			"name": "Notes",
+			"item": [
+				{
+					"name": "allNotes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{port}}/notes/all",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"notes",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addNotes",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Just a wonderful day\",\r\n    \"description\": \"Not every day we get to witness a wonderful day\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port}}/notes/add",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"notes",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editNote",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Can It be anymore better?\",\r\n    \"description\": \"It may get better\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port}}/notes/edit?id=65938b1a10e800197965caf4",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"notes",
+								"edit"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "65938b1a10e800197965caf4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "oneNote",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"65938ec6440b37f20a27ebd7\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port}}/notes/delete",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"notes",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "These are notes requests for CRUD operation."
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"aditya@gmail.com\",\r\n    \"password\": \"heybaby\",\r\n    \"name\": \"Aditya\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port}}/user/signup",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

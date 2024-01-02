@@ -1,0 +1,290 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Notes",
+    "description": "This is the Notes RESTful api developed using Express and Node JS and mongoDB for database. It has authentication as well as CRUD operations for notes."
+  },
+  "servers": [
+    {
+      "url": "https://create-notes-backend.onrender.com"
+    }
+  ],
+  "paths": {
+    "/notes/all": {
+      "get": {
+        "tags": [
+          "Notes"
+        ],
+        "summary": "allNotes",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://create-notes-backend.onrender.com"
+          }
+        ]
+      }
+    },
+    "/notes/add": {
+      "post": {
+        "tags": [
+          "Notes"
+        ],
+        "summary": "addNotes",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "title": "Dear Diary",
+                  "description": "I have decided to write one"
+                }
+              },
+              "examples": {
+                "default": {
+                  "value": {
+                    "title": "Dear Diary",
+                    "description": "I have decided to write one"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://create-notes-backend.onrender.com"
+          }
+        ]
+      }
+    },
+    "/notes/edit/6593edc8f1c44e9555c1fbca": {
+      "put": {
+        "tags": [
+          "Notes"
+        ],
+        "summary": "editNote",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "title": "Can It be anymore better?",
+                  "description": "It may get better"
+                }
+              },
+              "examples": {
+                "default": {
+                  "value": {
+                    "title": "Can It be anymore better?",
+                    "description": "It may get better"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://create-notes-backend.onrender.com"
+          }
+        ]
+      }
+    },
+    "/notes/6593edc8f1c44e9555c1fbca": {
+      "get": {
+        "tags": [
+          "Notes"
+        ],
+        "summary": "oneNote",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://create-notes-backend.onrender.com"
+          }
+        ]
+      }
+    },
+    "/notes/delete": {
+      "delete": {
+        "tags": [
+          "Notes"
+        ],
+        "summary": "deleteNote",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://create-notes-backend.onrender.com"
+          }
+        ]
+      }
+    },
+    "/user/signup": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "signup",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "email": "adityarana@mail.com",
+                  "password": "heybaby",
+                  "name": "Aditya"
+                }
+              },
+              "examples": {
+                "default": {
+                  "value": {
+                    "email": "adityarana@mail.com",
+                    "password": "heybaby",
+                    "name": "Aditya"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "https://create-notes-backend.onrender.com"
+          }
+        ]
+      }
+    },
+    "/user/login": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "login",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "email": "adityarana@mail.com",
+                  "password": "heybaby"
+                }
+              },
+              "examples": {
+                "default": {
+                  "value": {
+                    "email": "adityarana@mail.com",
+                    "password": "heybaby"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "https://create-notes-backend.onrender.com"
+          }
+        ]
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Notes",
+      "description": "These are notes requests for CRUD operation."
+    },
+    {
+      "name": "User"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}
